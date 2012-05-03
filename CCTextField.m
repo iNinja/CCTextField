@@ -52,6 +52,8 @@
 		
 		self.textField = [[[UITextField alloc] initWithFrame:CGRectMake(s.width * 2, s.height * 2, textFieldSize.width, textFieldSize.height)] autorelease];
 		
+		[self.textField addObserver:self forKeyPath:@"delegate" options:NSKeyValueObservingOptionNew context:NULL];
+		
 		[[[CCDirector sharedDirector] openGLView] addSubview:self.textField];
 		
 		[self initContent];
